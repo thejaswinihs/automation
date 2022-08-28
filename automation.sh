@@ -73,7 +73,8 @@ git checkout -b Dev
 git add .
 git commit -m "uploading the file"
 git remote add origin https://github.com/thejaswinihs/automation.git
-git push
+git push --set-upstream origin Dev
+
 
 #if [ -e $filepath ]; then
 #	echo "File exits"
