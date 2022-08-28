@@ -71,6 +71,7 @@ fi
 git checkout -b Dev
 git add .
 git commit -m "uploading the file"
+git remote -v
 
 #if [ -e $filepath ]; then
 #	echo "File exits"
