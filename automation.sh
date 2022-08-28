@@ -62,7 +62,7 @@ tar -cvf /tmp/$name-httpd-logs-$dt.tar /var/log/apache2
 aws s3 cp /tmp/$name-httpd-logs-$dt.tar  s3://upgrad-thejaswini
 
 echo `git init`
-if [$? -eq 0];
+if [ $? -eq 0 ];
 then
 	echo "git initilized"
 	echo " automate to check the service status and upload the logs s3 bucket">> readme.md
