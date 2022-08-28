@@ -54,8 +54,8 @@ else
 	echo " service is enabled"
 fi
 
-apt install  awscli
-if [$? -ne 0];then
+apt -s  awscli
+if [ $? -ne 0 ];then
 	sudo apt install awscli -y
 fi
 dt=$(date +%Y%m%d%H%M%S)
