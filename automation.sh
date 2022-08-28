@@ -57,7 +57,7 @@ apt -s awscli
 if [$? -ne 0];then
 	sudo apt install awscli -y
 fi
-dt=$(date+"%Y%m%d%H%M%S")
+dt=$(date +"%Y%m%d%H%M%S")
 tar -cvf /tmp/$name-httpd-logs-$dt.tar /var/log/apache2
 aws s3 cp /tmp/$name-httpd-logs-$dt.tar  s3://upgrad-thejaswini
 
@@ -65,7 +65,7 @@ echo `git init`
 if [ $? -eq 0 ];
 then
 	echo "git initilized"
-	echo " automate to check the service status and upload the logs s3 bucket">> readme.md
+	echo " automate to check the service status and upload the logs s3 bucket"> readme.md
 fi
 
 git checkout -b Dev
@@ -75,5 +75,5 @@ git commit -m "uploading the file"
 #if [ -e $filepath ]; then
 #	echo "File exits"
 #else
-#	echo "LogType	Time Created	Type	Size" >>/var/www/inventory.html
+#	echo "LogType	Time Created	Type	Size" >>/var/www/inventory.htmli
 #fi	
