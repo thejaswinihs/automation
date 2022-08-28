@@ -57,7 +57,7 @@ apt -s awscli
 if [$? -ne 0];then
 	sudo apt install awscli -y
 fi
-dt=$(date +"%Y%m%d%H%M%S")
+dt=$(date +%Y%m%d%H%M%S)
 tar -cvf /tmp/$name-httpd-logs-$dt.tar /var/log/apache2
 aws s3 cp /tmp/$name-httpd-logs-$dt.tar  s3://upgrad-thejaswini
 
