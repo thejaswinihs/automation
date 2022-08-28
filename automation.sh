@@ -53,7 +53,8 @@ then
 else 
 	echo " service is enabled"
 fi
-apt -s awscli
+
+apt install  awscli
 if [$? -ne 0];then
 	sudo apt install awscli -y
 fi
@@ -71,7 +72,8 @@ fi
 git checkout -b Dev
 git add .
 git commit -m "uploading the file"
-git remote -v
+git remote add origin https://github.com/thejaswinihs/automation.git
+git push
 
 #if [ -e $filepath ]; then
 #	echo "File exits"
