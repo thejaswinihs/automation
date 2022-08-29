@@ -11,4 +11,4 @@ git add .
 git commit -m "uploading the file"
 git remote add origin https://github.com/thejaswinihs/automation.git
 git push  origin Dev
-
+git tag "Automation-v0.1"
