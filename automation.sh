@@ -81,3 +81,13 @@ source /root/automation/git.sh
 #else
 #	echo "LogType	Time Created	Type	Size" >>/var/www/inventory.htmli
 #fi	
+inventory_file=/var/www/html/inventory.html
+timestamp=$(date +%Y%m%d%H%M%S)
+myname="Thejaswini"
+if [ ! -f "$inventory_file" ]
+then
+touch "$inventory_file"
+echo "Log Type&emsp;&emsp;&emsp;&emsp;Time Created&emsp;&emsp;&emsp;&emsp;Type&emsp;&emsp;&emsp;&emsp;Size &emsp;&emsp;&emsp;&emsp;<br>" >> "$inventory_file"
+fi
+echo "<br>" >> $inventory_file
+echo "<br>httpd-logs &nbsp;&nbsp;&nbsp;&nbsp; ${timestamp} &nbsp;&nbsp;&nbsp;&nbsp; tar &nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp; `du -h /tmp/${myname}-httpd-logs-${timestamp}.tar | awk '{print $1}'`" >> /var/www/html/inventory.html
